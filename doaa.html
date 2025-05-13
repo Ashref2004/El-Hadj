@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="أدعية الحج والعمرة - مجموعة مميزة من الأدعية النبوية لمناسك الحج والعمرة">
+  <meta name="keywords" content="أدعية الحج, أدعية العمرة, أذكار الحج, أدعية مكة, أدعية المسجد النبوي">
+  <meta name="author" content="بوابة الحج والعمرة">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/kaaba-icon.png">
+  
+  <title>بوابة الحج والعمرة | أدعية الحج والعمرة</title>
+
+  <!-- روابط CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@400;700&family=Scheherazade+New:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --dark-green: #0a240a;
+      --gold: #c6a664;
+      --light-beige: #f5f0e4;
+      --dark-brown: #3a2a20;
+      --cream: #fcf8ee;
+      --olive-green: #3c4b23;
+      --gold-light: rgba(198, 166, 100, 0.8);
+      --gold-dark: #b5881e;
+      --green-light: rgba(10, 36, 10, 0.95);
+      --green-darker: #051905;
+      --gold-gradient: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    }
+    
+    body {
+      font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+      background-color: var(--light-beige);
+      color: var(--dark-brown);
+      line-height: 1.9;
+      overflow-x: hidden;
+      text-align: right;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+    }
+    
+    /* تحسينات شريط التنقل */
+    .navbar {
+      background-color: var(--green-light) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      padding: 15px 0;
+      transition: all 0.4s ease;
+      border-bottom: 2px solid var(--gold-light);
+    }
+    
+    .navbar.scrolled {
+      padding: 10px 0;
+      background-color: var(--green-darker) !important;
+      backdrop-filter: blur(8px);
+    }
+    
+    .navbar-brand {
+      color: var(--gold) !important;
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      font-family: 'Lateef', serif;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .navbar-brand .logo-container {
+      position: relative;
+      width: 60px;
+      height: 50px;
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .navbar-brand .logo-container .logo-icon {
+      font-size: 1.8rem;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(198, 166, 100, 0.5);
+    }
+    
+    /* أوقات الصلاة في الشريط */
+    .prayer-times {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    
+    .prayer-time {
+      margin: 0 8px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.9rem;
+      color: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .prayer-time span:first-child {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    
+    .prayer-time span:last-child {
+      font-size: 0.8rem;
+    }
+    
+    /* تحسينات القوائم المنسدلة */
+    .dropdown-menu {
+      background-color: var(--green-darker);
+      border: 1px solid var(--gold-light);
+      border-radius: 10px;
+      padding: 10px 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .dropdown-item {
+      color: var(--cream);
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      font-family: 'Tajawal', sans-serif;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .dropdown-item::before {
+      content: '';
+      position: absolute;
+      right: 15px;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: all 0.3s ease;
+    }
+    
+    .dropdown-item:hover, .dropdown-item:focus {
+      background-color: transparent;
+      color: var(--gold);
+      padding-right: 25px;
+    }
+    
+    .dropdown-item:hover::before {
+      width: 20px;
+    }
+    
+    .dropdown-divider {
+      border-color: rgba(198, 166, 100, 0.3);
+      margin: 5px 0;
+    }
+    
+    .nav-link {
+      color: var(--cream) !important;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0 8px;
+      padding: 10px 20px !important;
+      border-radius: 50px;
+      transition: all 0.4s ease;
+      position: relative;
+      font-family: 'Tajawal', sans-serif;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      transition: all 0.4s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--gold) !important;
+      transform: translateY(-3px);
+      text-shadow: 0 0 5px rgba(198, 166, 100, 0.5);
+    }
+    
+    .nav-link:hover::before {
+      width: calc(100% - 40px);
+    }
+    
+    .nav-link.active {
+      background: linear-gradient(135deg, var(--gold-light), rgba(198, 166, 100, 0.5));
+      color: var(--dark-brown) !important;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(198, 166, 100, 0.3);
+    }
+    
+    .nav-link i {
+      margin-left: 10px;
+      font-size: 1em;
+      transition: transform 0.3s ease;
+    }
+    
+    .nav-link:hover i {
+      transform: scale(1.2);
+    }
+    
+    /* قسم البطل المميز */
+    .hero-section {
+      background: linear-gradient(rgba(10, 36, 10, 0.9), rgba(60, 75, 35, 0.9)), 
+                  url('images/kaaba-hero-2.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/islamic-pattern-2.png') repeat;
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to top, var(--light-beige), transparent);
+      z-index: 2;
+    }
+    
+    .hero-text {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 3;
+    }
+    
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.8);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      line-height: 1.3;
+      animation: fadeInUp 1s ease both;
+      font-family: 'Lateef', serif;
+      background: linear-gradient(to bottom, var(--gold), #e8d9b5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero-search {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .hero-search input {
+      width: 100%;
+      padding: 15px 25px;
+      border-radius: 50px;
+      border: none;
+      font-size: 1.2rem;
+      font-family: 'Tajawal', sans-serif;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .hero-search input:focus {
+      outline: none;
+      box-shadow: 0 5px 30px rgba(198, 166, 100, 0.4);
+    }
+    
+    .hero-search button {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      background: var(--gold-gradient);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 25px;
+      font-size: 1.1rem;
+      font-family: 'Tajawal', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .hero-search button:hover {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      transform: translateX(-5px);
+    }
+    
+    /* قسم الأدعية الرئيسي */
+    .duas-main {
+      padding: 80px 0;
+      position: relative;
+      background-color: var(--light-beige);
+    }
+    
+    .duas-main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/islamic-pattern-light.png') repeat;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-header h2 {
+      font-size: 2.8rem;
+      color: var(--dark-green);
+      font-family: 'Lateef', serif;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to left, var(--gold), transparent);
+      border-radius: 2px;
+    }
+    
+    .section-header p {
+      font-size: 1.4rem;
+      color: var(--olive-green);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* أكورديون الأدعية المطور */
+    .accordion-item {
+      border: none;
+      border-radius: 10px !important;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(70, 50, 40, 0.1);
+      background-color: white;
+    }
+    
+    .accordion-button {
+      background-color: white;
+      color: var(--dark-green);
+      font-size: 1.4rem;
+      font-weight: 700;
+      font-family: 'Tajawal', sans-serif;
+      padding: 20px 25px;
+      border-radius: 10px 10px 0 0 !important;
+      box-shadow: none;
+      transition: all 0.3s ease;
+    }
+    
+    .accordion-button:not(.collapsed) {
+      background: linear-gradient(to right, var(--gold-light), white);
+      color: var(--dark-green);
+      box-shadow: 0 2px 10px rgba(198, 166, 100, 0.2);
+    }
+    
+    .accordion-button::after {
+      margin-left: 0;
+      margin-right: auto;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230a240a'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      transition: transform 0.3s ease;
+    }
+    
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230a240a'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    
+    .accordion-button:focus {
+      box-shadow: none;
+      border-color: transparent;
+    }
+    
+    .accordion-body {
+      padding: 25px;
+      background-color: white;
+      border-radius: 0 0 10px 10px;
+    }
+    
+    /* بطاقات تصنيفات الأدعية المطورة */
+    .category-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(70, 50, 40, 0.1);
+      transition: all 0.4s ease;
+      text-align: center;
+      border-bottom: 5px solid var(--gold);
+      margin-bottom: 30px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(198, 166, 100, 0.1), transparent);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(70, 50, 40, 0.15);
+    }
+    
+    .category-card:hover::before {
+      opacity: 1;
+    }
+    
+    .category-icon {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+    }
+    
+    .category-card:hover .category-icon {
+      transform: scale(1.2);
+      color: var(--gold-dark);
+    }
+    
+    .category-title {
+      font-size: 1.8rem;
+      color: var(--dark-green);
+      font-family: 'Lateef', serif;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .category-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      right: 0;
+      width: 0;
+      height: 3px;
+      background: var(--gold);
+      transition: all 0.4s ease;
+    }
+    
+    .category-card:hover .category-title::after {
+      width: 100%;
+    }
+    
+    .category-desc {
+      font-size: 1.2rem;
+      color: var(--dark-brown);
+      font-family: 'Amiri', serif;
+      transition: all 0.4s ease;
+    }
+    
+    .category-card:hover .category-desc {
+      color: var(--olive-green);
+    }
+    
+    /* نص الدعاء المطور */
+    .dua-text {
+      font-size: 1.8rem;
+      color: var(--dark-green);
+      font-family: 'Scheherazade New', serif;
+      line-height: 2.5;
+      margin-bottom: 20px;
+      text-align: right;
+      position: relative;
+      padding-right: 30px;
+    }
+    
+    .dua-text::before {
+      content: '"';
+      position: absolute;
+      right: 0;
+      top: -15px;
+      font-size: 3.5rem;
+      color: var(--gold-light);
+      font-family: 'Amiri', serif;
+      line-height: 1;
+    }
+    
+    .dua-text::after {
+      content: '"';
+      position: absolute;
+      left: 0;
+      bottom: -25px;
+      font-size: 3.5rem;
+      color: var(--gold-light);
+      font-family: 'Amiri', serif;
+      line-height: 1;
+    }
+    
+    .dua-reference {
+      font-size: 1.2rem;
+      color: var(--olive-green);
+      font-family: 'Tajawal', sans-serif;
+      background: rgba(10, 36, 10, 0.1);
+      padding: 8px 15px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .dua-container:hover .dua-reference {
+      background: rgba(198, 166, 100, 0.2);
+      color: var(--dark-green);
+    }
+    
+    /* زر النسخ المطور */
+    .copy-btn {
+      background: var(--gold-gradient);
+      color: white;
+      border: none;
+      padding: 8px 25px;
+      border-radius: 50px;
+      font-family: 'Tajawal', sans-serif;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 3px 10px rgba(198, 166, 100, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .copy-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .copy-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(198, 166, 100, 0.4);
+    }
+    
+    .copy-btn:hover::before {
+      opacity: 1;
+    }
+    
+    .copy-btn i {
+      margin-left: 8px;
+      position: relative;
+    }
+    
+    .copy-btn span {
+      position: relative;
+    }
+    
+    /* أزرار المشاركة */
+    .share-btns {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .share-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .share-btn.facebook {
+      background-color: #3b5998;
+    }
+    
+    .share-btn.twitter {
+      background-color: #1da1f2;
+    }
+    
+    .share-btn.whatsapp {
+      background-color: #25d366;
+    }
+    
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* قسم تنزيل الأدعية */
+    .download-section {
+      background: linear-gradient(135deg, var(--green-light), var(--green-darker));
+      padding: 60px 0;
+      margin-top: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .download-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/islamic-pattern-2.png') repeat;
+      opacity: 0.1;
+    }
+    
+    .download-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      text-align: center;
+      height: 100%;
+      border: 1px solid rgba(198, 166, 100, 0.3);
+    }
+    
+    .download-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      border-color: var(--gold);
+    }
+    
+    .download-btn {
+      background: var(--gold-gradient);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 5px 15px rgba(198, 166, 100, 0.3);
+    }
+    
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(198, 166, 100, 0.4);
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    }
+    
+    .download-btn i {
+      margin-left: 10px;
+    }
+    
+    /* تأثيرات حركية متقدمة */
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(40px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes scaleIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    /* تأثير العائمة للأيقونات */
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* زر العودة للأعلى */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--gold-gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 20px rgba(198, 166, 100, 0.4);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    }
+    
+    /* تعديلات للجوال */
+    @media (max-width: 1400px) {
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+      
+      .prayer-times {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 1200px) {
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+      
+      .dua-text {
+        font-size: 1.6rem;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-header h2 {
+        font-size: 2.5rem;
+      }
+      
+      .section-header p {
+        font-size: 1.3rem;
+      }
+      
+      .accordion-button {
+        font-size: 1.3rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-brand {
+        font-size: 1.4rem;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .nav-link {
+        font-size: 1.1rem;
+        padding: 8px 16px !important;
+      }
+      
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .dua-text {
+        font-size: 1.5rem;
+        line-height: 2.2;
+      }
+      
+      .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-text {
+        padding: 0 20px;
+      }
+      
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .navbar-brand .logo-container {
+        width: 45px;
+        height: 38px;
+        margin-left: 10px;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      
+      .section-header p {
+        font-size: 1.1rem;
+      }
+      
+      .accordion-button {
+        font-size: 1.2rem;
+        padding: 15px 20px;
+      }
+      
+      .dua-text {
+        font-size: 1.4rem;
+        padding-right: 20px;
+      }
+      
+      .dua-text::before, 
+      .dua-text::after {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- شريط التنقل المميز -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-container">
+          <span class="logo-icon floating">🕋</span>
+        </span>
+        بوابة الحج والعمرة
+      </a>
+      
+      <!-- أوقات الصلاة -->
+      <div class="prayer-times d-none d-xl-flex">
+        <div class="prayer-time">
+          <span>الفجر</span>
+          <span id="salat-fajr">4:30 ص</span>
+        </div>
+        <div class="prayer-time">
+          <span>الظهر</span>
+          <span id="salat-dhuhr">12:15 م</span>
+        </div>
+        <div class="prayer-time">
+          <span>العصر</span>
+          <span id="salat-asr">3:45 م</span>
+        </div>
+        <div class="prayer-time">
+          <span>المغرب</span>
+          <span id="salat-maghrib">6:30 م</span>
+        </div>
+        <div class="prayer-time">
+          <span>العشاء</span>
+          <span id="salat-isha">8:00 م</span>
+        </div>
+      </div>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHajj" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-kaaba"></i> الحج
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownHajj">
+              <li><a class="dropdown-item" href="hajj.html"><i class="fas fa-info-circle me-2"></i>مقدمة عن الحج</a></li>
+              <li><a class="dropdown-item" href="hajj-steps.html"><i class="fas fa-list-ol me-2"></i>مناسك الحج خطوة بخطوة</a></li>
+              <li><a class="dropdown-item" href="hajj-tips.html"><i class="fas fa-lightbulb me-2"></i>نصائح للحجاج</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="hajj-videos.html"><i class="fas fa-video me-2"></i>فيديو تعليمي</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUmrah" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-mosque"></i> العمرة
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUmrah">
+              <li><a class="dropdown-item" href="umrah.html"><i class="fas fa-info-circle me-2"></i>مقدمة عن العمرة</a></li>
+              <li><a class="dropdown-item" href="umrah-steps.html"><i class="fas fa-list-ol me-2"></i>مناسك العمرة خطوة بخطوة</a></li>
+              <li><a class="dropdown-item" href="umrah-tips.html"><i class="fas fa-lightbulb me-2"></i>نصائح للمعتمرين</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownDuas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-hands-praying"></i> أدعية
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownDuas">
+              <li><a class="dropdown-item" href="duas.html"><i class="fas fa-kaaba me-2"></i>أدعية الحج والعمرة</a></li>
+              <li><a class="dropdown-item" href="duas-masjid.html"><i class="fas fa-mosque me-2"></i>أدعية المسجد الحرام</a></li>
+              <li><a class="dropdown-item" href="duas-nabawi.html"><i class="fas fa-mosque me-2"></i>أدعية المسجد النبوي</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="duas-azkar.html"><i class="fas fa-praying-hands me-2"></i>أذكار الحج والعمرة</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- قسم البطل المميز -->
+  <header class="hero-section">
+    <div class="hero-text container">
+      <h1 class="mb-4 animate__animated animate__fadeInUp">أدعية الحج والعمرة</h1>
+      <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-1s">مجموعة مميزة من الأدعية النبوية والأذكار الخاصة بالحج والعمرة</p>
+      
+      <div class="hero-search animate__animated animate__fadeInUp animate__delay-2s">
+        <form id="searchForm">
+          <input type="text" id="searchInput" placeholder="ابحث عن دعاء معين...">
+          <button type="submit"><i class="fas fa-search me-2"></i>بحث</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- قسم الأدعية الرئيسي -->
+  <section class="duas-main">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="animate__animated animate__fadeInUp">تصنيفات الأدعية</h2>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">اختر من التصنيفات التالية للوصول إلى الأدعية المطلوبة</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-suitcase-rolling"></i></div>
+            <div class="category-title">أدعية السفر</div>
+            <div class="category-desc">أدعية السفر إلى الحج والعمرة وما يقال عند ركوب المركبة والخروج من المنزل</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-kaaba"></i></div>
+            <div class="category-title">أدعية الإحرام</div>
+            <div class="category-desc">أدعية الإحرام والتلبية وما يقال عند دخول مكة ورؤية الكعبة</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-people-arrows"></i></div>
+            <div class="category-title">أدعية الطواف</div>
+            <div class="category-desc">أدعية الطواف حول الكعبة وما يقال بين الركن اليماني والحجر الأسود</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-mountain"></i></div>
+            <div class="category-title">أدعية عرفات</div>
+            <div class="category-desc">أدعية يوم عرفة وما يقال في الوقوف بعرفة وأفضل الأدعية المستجابة</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-water"></i></div>
+            <div class="category-title">أدعية زمزم</div>
+            <div class="category-desc">أدعية شرب ماء زمزم وما يقال عند الشرب منه والدعاء عند المقام</div>
+          </div>
+        </div>
+        <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="category-card">
+            <div class="category-icon"><i class="fas fa-star-and-crescent"></i></div>
+            <div class="category-title">أدعية عامة</div>
+            <div class="category-desc">أدعية وأذكار عامة تقال أثناء الحج والعمرة وفي الأماكن المقدسة</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section-header mt-5">
+        <h2 class="animate__animated animate__fadeInUp">الأدعية النبوية</h2>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">مجموعة منتقاة من الأدعية الصحيحة عن النبي صلى الله عليه وسلم</p>
+      </div>
+      
+      <div class="accordion" id="duasAccordion">
+        <!-- دعاء السفر -->
+        <div class="accordion-item animate__animated animate__fadeInUp">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fas fa-suitcase-rolling me-3"></i> أدعية السفر إلى الحج والعمرة
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#duasAccordion">
+            <div class="accordion-body">
+              <div class="dua-container" data-keywords="سفر, سفر الحج, سفر العمرة, دعاء السفر, ركوب, مركبة, خروج, منزل">
+                <div class="dua-text">
+                  سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ
+                </div>
+                <div class="dua-reference">(سورة الزخرف: 13)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="سفر, دعاء السفر, الحج, العمرة, تيسير, بر, تقوى, عمل صالح">
+                <div class="dua-text">
+                  اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى، وَمِنَ الْعَمَلِ مَا تَرْضَى، اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا، وَاطْوِ عَنَّا بُعْدَهُ، اللَّهُمَّ أَنْتَ الصَّاحِبُ فِي السَّفَرِ، وَالْخَلِيفَةُ فِي الأَهْلِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ السَّفَرِ، وَكَآبَةِ الْمَنْظَرِ، وَسُوءِ الْمُنْقَلَبِ فِي الْمَالِ وَالأَهْلِ
+                </div>
+                <div class="dua-reference">(رواه مسلم)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="سفر, دعاء السفر, حركة, تنقل, حماية, أمان">
+                <div class="dua-text">
+                  اللَّهُمَّ بِكَ أَصُولُ، وَبِكَ أَجُولُ، وَبِكَ أَسِيرُ
+                </div>
+                <div class="dua-reference">(رواه الترمذي)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- دعاء الإحرام -->
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-1s">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <i class="fas fa-kaaba me-3"></i> أدعية الإحرام والتلبية
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#duasAccordion">
+            <div class="accordion-body">
+              <div class="dua-container" data-keywords="إحرام, تلبية, حج, عمرة, لبيك, دعاء الإحرام">
+                <div class="dua-text">
+                  لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لاَ شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لاَ شَرِيكَ لَكَ
+                </div>
+                <div class="dua-reference">(متفق عليه)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="إحرام, عمرة, تيسير, قبول, مغفرة, دعاء الإحرام">
+                <div class="dua-text">
+                  اللَّهُمَّ إِنِّي أُرِيدُ الْعُمْرَةَ فَيَسِّرْهَا لِي وَتَقَبَّلْهَا مِنِّي، وَاجْعَلْهَا مَبْرُورَةً مَقْبُولَةً، وَذَنْبِي مَغْفُورًا
+                </div>
+                <div class="dua-reference">(دعاء الإحرام)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="حرم, أمن, حماية, نار, عذاب, دعاء الدخول">
+                <div class="dua-text">
+                  اللَّهُمَّ هَذَا حَرَمُكَ وَأَمْنُكَ، فَحَرِّمْ لَحْمِي وَدَمِي وَشَعْرِي وَبَشَرِي عَلَى النَّارِ، وَأَمِنِّي مِنْ عَذَابِكَ يَوْمَ تَبْعَثُ عِبَادَكَ
+                </div>
+                <div class="dua-reference">(رواه أحمد)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- دعاء الطواف -->
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-2s">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <i class="fas fa-people-arrows me-3"></i> أدعية الطواف حول الكعبة
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#duasAccordion">
+            <div class="accordion-body">
+              <div class="dua-container" data-keywords="طواف, كعبة, أذكار, تسبيح, تحميد, تهليل, تكبير">
+                <div class="dua-text">
+                  سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلاَ إِلَهَ إِلاَّ اللَّهُ وَاللَّهُ أَكْبَرُ وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ
+                </div>
+                <div class="dua-reference">(يقال أثناء الطواف)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="دعاء, حسنات, دنيا, آخرة, وقاية, نار">
+                <div class="dua-text">
+                  رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+                </div>
+                <div class="dua-reference">(سورة البقرة: 201)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="بيت, حرم, أمن, عياذ, نار, مقام">
+                <div class="dua-text">
+                  اللَّهُمَّ إِنَّ الْبَيْتَ بَيْتُكَ، وَالْحَرَمَ حَرَمُكَ، وَالأَمْنَ أَمْنُكَ، وَهَذَا مَقَامُ الْعَائِذِ بِكَ مِنَ النَّارِ
+                </div>
+                <div class="dua-reference">(رواه الحاكم)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- دعاء عرفات -->
+        <div class="accordion-item animate__animated animate__fadeInUp">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              <i class="fas fa-mountain me-3"></i> أدعية يوم عرفة
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#duasAccordion">
+            <div class="accordion-body">
+              <div class="dua-container" data-keywords="عرفة, توحيد, إله, واحد, لا شريك, ملك, حمد">
+                <div class="dua-text">
+                  لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ
+                </div>
+                <div class="dua-reference">(خير الدعاء يوم عرفة)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="حمد, صلاة, نسك, حياة, موت, عذاب, قبر, وسوسة">
+                <div class="dua-text">
+                  اللَّهُمَّ لَكَ الْحَمْدُ كَالَّذِي نَقُولُ وَخَيْرًا مِمَّا نَقُولُ، اللَّهُمَّ لَكَ صَلاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي، وَإِلَيْكَ مَآبِي، وَإِيَّاكَ نَ
+                </div>
+                <div class="dua-reference">(رواه الترمذي)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              
+              <div class="dua-container mt-5" data-keywords="ظلم, نفس, مغفرة, غفور, رحيم, عفو, توبة">
+                <div class="dua-text">
+                  اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْمًا كَثِيرًا، وَلاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ، فَاغْفِرْ لِي مَغْفِرَةً مِنْ عِنْدِكَ، وَارْحَمْنِي إِنَّكَ أَنْتَ الْغَفُورُ الرَّحِيمُ
+                </div>
+                <div class="dua-reference">(متفق عليه)</div>
+                <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling.previousElementSibling)"><i class="far fa-copy"></i> <span>نسخ الدعاء</span></button>
+                <div class="share-btns">
+                  <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم تنزيل الأدعية -->
+  <section class="download-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="text-white animate__animated animate__fadeInUp">تنزيل أدعية الحج والعمرة</h2>
+        <p class="text-white animate__animated animate__fadeInUp animate__delay-1s">يمكنك تحميل مجموعة الأدعية كملف PDF للاستفادة منها أثناء الحج أو العمرة</p>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-md-6 animate__animated animate__fadeInUp">
+          <div class="download-card">
+            <i class="fas fa-file-pdf fa-3x mb-3" style="color: #c6a664;"></i>
+            <h3 class="mb-3">كتيب الأدعية النبوية</h3>
+            <p>تحميل كتيب يحتوي على جميع أدعية الحج والعمرة مع شرحها وتخريجها بصيغة PDF</p>
+            <button class="download-btn"><i class="fas fa-download"></i> تحميل الملف</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- زر العودة للأعلى -->
+  <a href="#" class="back-to-top animate__animated animate__fadeIn"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- سكربتات -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script>
+    // تأثير التمرير لشريط التنقل
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      
+      // زر العودة للأعلى
+      const backToTop = document.querySelector('.back-to-top');
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    // تأثير اهتزاز للأيقونات
+    document.addEventListener('DOMContentLoaded', function() {
+      const icons = document.querySelectorAll('.nav-link i, .category-icon');
+      
+      icons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+          icon.classList.add('animate__animated', 'animate__swing');
+          setTimeout(() => {
+            icon.classList.remove('animate__animated', 'animate__swing');
+          }, 1000);
+        });
+      });
+      
+      // تحميل الصفحة بسلاسة
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 100);
+    });
+    
+    // وظيفة نسخ النص
+    function copyToClipboard(element) {
+      const text = element.innerText;
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      
+      // إظهار تنبيه بنجاح النسخ
+      const originalText = event.target.querySelector('span').innerHTML;
+      event.target.querySelector('span').innerHTML = 'تم النسخ!';
+      event.target.querySelector('i').className = 'fas fa-check';
+      
+      setTimeout(() => {
+        event.target.querySelector('span').innerHTML = originalText;
+        event.target.querySelector('i').className = 'far fa-copy';
+      }, 2000);
+    }
+    
+    // زر العودة للأعلى
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // تأثيرات عند التمرير
+    const animateElements = document.querySelectorAll('.animate__animated');
+    
+    const animateOnScroll = function() {
+      animateElements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          const animationClass = Array.from(element.classList).find(className => 
+            className.startsWith('animate__') && 
+            !className.endsWith('animated')
+          );
+          
+          if (animationClass) {
+            element.style.opacity = '1';
+            element.classList.add(animationClass);
+          }
+        }
+      });
+    };
+    
+    // تشغيل مرة عند التحميل
+    animateOnScroll();
+    
+    // ثم عند التمرير
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // وظيفة البحث في الأدعية
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+      
+      if (searchTerm === '') {
+        alert('الرجاء إدخال كلمة للبحث');
+        return;
+      }
+      
+      // إظهار جميع الأقسام والأدعية أولاً
+      document.querySelectorAll('.accordion-item').forEach(item => {
+        item.style.display = 'block';
+      });
+      
+      document.querySelectorAll('.accordion-collapse').forEach(collapse => {
+        collapse.classList.remove('show');
+      });
+      
+      document.querySelectorAll('.dua-container').forEach(dua => {
+        dua.style.display = 'block';
+      });
+      
+      // البحث في الأدعية
+      let found = false;
+      
+      document.querySelectorAll('.dua-container').forEach(dua => {
+        const keywords = dua.getAttribute('data-keywords').toLowerCase();
+        const duaText = dua.querySelector('.dua-text').textContent.toLowerCase();
+        
+        if (keywords.includes(searchTerm)) {
+          found = true;
+          // إظهار القسم الذي يحتوي على الدعاء
+          const parentCollapse = dua.closest('.accordion-collapse');
+          const parentItem = dua.closest('.accordion-item');
+          
+          parentItem.style.display = 'block';
+          parentCollapse.classList.add('show');
+        } else if (duaText.includes(searchTerm)) {
+          found = true;
+          // إظهار القسم الذي يحتوي على الدعاء
+          const parentCollapse = dua.closest('.accordion-collapse');
+          const parentItem = dua.closest('.accordion-item');
+          
+          parentItem.style.display = 'block';
+          parentCollapse.classList.add('show');
+        } else {
+          dua.style.display = 'none';
+        }
+      });
+      
+      if (!found) {
+        alert('لم يتم العثور على أدعية تطابق بحثك');
+      } else {
+        // إخفاء الأقسام التي لا تحتوي على نتائج
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          const hasVisibleDuas = Array.from(item.querySelectorAll('.dua-container')).some(
+            dua => dua.style.display !== 'none'
+          );
+          
+          if (!hasVisibleDuas) {
+            item.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

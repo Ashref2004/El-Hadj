@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مواقيت الصلاة - دليلك الشامل لمواعيد الصلاة حسب التوقيت المحلي">
+  <meta name="keywords" content="مواقيت الصلاة, أوقات الصلاة, الفجر, الظهر, العصر, المغرب, العشاء, السعودية">
+  <meta name="author" content="بوابة الحج والعمرة">
+  
+  <title>بوابة الحج والعمرة | مواقيت الصلاة</title>
+
+  <!-- روابط CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@400;700&family=Scheherazade+New:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --dark-green: #0a240a;
+      --gold: #c6a664;
+      --light-beige: #f5f0e4;
+      --dark-brown: #3a2a20;
+      --cream: #fcf8ee;
+      --olive-green: #3c4b23;
+      --gold-light: rgba(198, 166, 100, 0.8);
+      --gold-dark: #b5881e;
+      --green-light: rgba(10, 36, 10, 0.95);
+      --green-darker: #051905;
+    }
+    
+    body {
+      font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+      background-color: var(--light-beige);
+      color: var(--dark-brown);
+      line-height: 1.9;
+      overflow-x: hidden;
+      text-align: right;
+    }
+    
+    /* تحسينات شريط التنقل */
+    .navbar {
+      background-color: var(--green-light) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      padding: 15px 0;
+      transition: all 0.4s ease;
+      border-bottom: 2px solid var(--gold-light);
+    }
+    
+    .navbar.scrolled {
+      padding: 10px 0;
+      background-color: var(--green-darker) !important;
+      backdrop-filter: blur(8px);
+    }
+    
+    .navbar-brand {
+      color: var(--gold) !important;
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      font-family: 'Lateef', serif;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .navbar-brand .logo-container {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .navbar-brand .logo-icon {
+      font-size: 1.8rem;
+      color: var(--gold);
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
+    }
+    
+    .nav-link {
+      color: var(--cream) !important;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0 5px;
+      padding: 8px 15px !important;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-family: 'Tajawal', sans-serif;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--gold) !important;
+      transform: translateY(-2px);
+      text-shadow: 0 0 5px rgba(198, 166, 100, 0.5);
+    }
+    
+    .nav-link:hover::before {
+      width: calc(100% - 30px);
+    }
+    
+    .nav-link.active {
+      background: linear-gradient(135deg, var(--gold-light), rgba(198, 166, 100, 0.5));
+      color: var(--dark-brown) !important;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(198, 166, 100, 0.3);
+    }
+    
+    .nav-link i {
+      margin-left: 8px;
+      font-size: 0.9em;
+      transition: transform 0.3s ease;
+    }
+    
+    .nav-link:hover i {
+      transform: scale(1.1);
+    }
+    
+    /* تأثير العائمة للأيقونات */
+    .floating-icon {
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* قسم البطل المميز */
+    .hero-section {
+      background: linear-gradient(rgba(10, 36, 10, 0.9), rgba(60, 75, 35, 0.9));
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23c6a664" opacity="0.1" d="M30,10L50,30L70,10L90,30L70,50L90,70L70,90L50,70L30,90L10,70L30,50L10,30L30,10Z"/></svg>') repeat;
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to top, var(--light-beige), transparent);
+      z-index: 2;
+    }
+    
+    .hero-text {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 3;
+    }
+    
+    .hero-text h1 {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.8);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      line-height: 1.3;
+      animation: fadeInUp 1s ease both;
+      font-family: 'Lateef', serif;
+      background: linear-gradient(to bottom, var(--gold), #e8d9b5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* قسم مواقيت الصلاة الرئيسي */
+    .prayer-times-main {
+      padding: 80px 0;
+      position: relative;
+      background-color: var(--light-beige);
+    }
+    
+    .prayer-times-main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%230a240a" opacity="0.05" d="M20,0L30,10L20,20L30,30L20,40L30,50L20,60L30,70L20,80L30,90L20,100L10,90L0,100L0,80L10,70L0,60L10,50L0,40L10,30L0,20L10,10L0,0L20,0Z"/></svg>') repeat;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    
+    .prayer-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .prayer-header h2 {
+      font-size: 2.8rem;
+      color: var(--dark-green);
+      font-family: 'Lateef', serif;
+      margin-bottom: 20px;
+    }
+    
+    .prayer-header p {
+      font-size: 1.4rem;
+      color: var(--olive-green);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .date-selector {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(70, 50, 40, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .location-date-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    
+    .location-selector, .date-picker {
+      flex: 1;
+      min-width: 250px;
+      margin: 10px;
+    }
+    
+    .location-selector label, .date-picker label {
+      font-size: 1.3rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+      display: block;
+      font-family: 'Tajawal', sans-serif;
+    }
+    
+    .location-selector select, .date-picker input {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid var(--gold);
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-family: 'Amiri', serif;
+      color: var(--dark-brown);
+      background-color: var(--cream);
+    }
+    
+    .current-date-display {
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1.4rem;
+      color: var(--olive-green);
+      font-weight: bold;
+    }
+    
+    .hijri-date {
+      font-size: 1.2rem;
+      color: var(--gold-dark);
+      margin-top: 5px;
+    }
+    
+    .prayer-times-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .prayer-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(70, 50, 40, 0.1);
+      transition: all 0.4s ease;
+      text-align: center;
+      border-bottom: 5px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .prayer-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(70, 50, 40, 0.15);
+    }
+    
+    .prayer-card.current {
+      background: linear-gradient(135deg, var(--gold-light), rgba(198, 166, 100, 0.3));
+      border-color: var(--gold-dark);
+    }
+    
+    .prayer-card .prayer-icon {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    
+    .prayer-name {
+      font-size: 2rem;
+      color: var(--dark-green);
+      font-family: 'Lateef', serif;
+      margin-bottom: 15px;
+    }
+    
+    .prayer-time {
+      font-size: 2.8rem;
+      color: var(--gold-dark);
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .prayer-remaining {
+      font-size: 1.3rem;
+      color: var(--olive-green);
+      font-family: 'Tajawal', sans-serif;
+      background: rgba(10, 36, 10, 0.1);
+      padding: 8px 15px;
+      border-radius: 50px;
+      display: inline-block;
+    }
+    
+    .prayer-next {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--olive-green);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-family: 'Tajawal', sans-serif;
+    }
+    
+    .prayer-details {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--gold-light);
+    }
+    
+    .prayer-details p {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: var(--dark-brown);
+    }
+    
+    .prayer-details .iqama-time {
+      font-weight: bold;
+      color: var(--gold-dark);
+    }
+    
+    /* إضافة آيات قرآنية */
+    .quran-verse {
+      font-size: 1.6rem;
+      font-family: 'Scheherazade New', serif;
+      color: var(--gold);
+      margin: 4rem auto;
+      max-width: 900px;
+      padding: 30px;
+      border-radius: 15px;
+      background: rgba(10, 36, 10, 0.5);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(198, 166, 100, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: fadeIn 2s ease both;
+      line-height: 2.2;
+      text-align: center;
+    }
+    
+    .quran-verse::before,
+    .quran-verse::after {
+      content: '"';
+      font-size: 4rem;
+      color: var(--gold-light);
+      position: absolute;
+      opacity: 0.3;
+      font-family: 'Amiri', serif;
+    }
+    
+    .quran-verse::before {
+      top: -15px;
+      right: 20px;
+    }
+    
+    .quran-verse::after {
+      bottom: -40px;
+      left: 20px;
+    }
+    
+    .verse-reference {
+      display: block;
+      font-size: 1.3rem;
+      color: var(--cream);
+      margin-top: 20px;
+      font-style: italic;
+      font-family: 'Tajawal', sans-serif;
+    }
+    
+    /* تأثيرات حركية متقدمة */
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(40px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* تعديلات للجوال */
+    @media (max-width: 1400px) {
+      .hero-text h1 {
+        font-size: 3.5rem;
+      }
+    }
+    
+    @media (max-width: 1200px) {
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+      
+      .quran-verse {
+        font-size: 1.5rem;
+        padding: 25px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+      
+      .prayer-header h2 {
+        font-size: 2.5rem;
+      }
+      
+      .prayer-header p {
+        font-size: 1.3rem;
+      }
+      
+      .quran-verse {
+        font-size: 1.4rem;
+        line-height: 2;
+      }
+      
+      .navbar-brand .logo-icon {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .quran-verse {
+        font-size: 1.3rem;
+        padding: 20px;
+      }
+      
+      .prayer-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .prayer-times-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .prayer-time {
+        font-size: 2.5rem;
+      }
+      
+      .location-date-container {
+        flex-direction: column;
+      }
+      
+      .location-selector, .date-picker {
+        min-width: 100%;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-text {
+        padding: 0 20px;
+      }
+      
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+      
+      .navbar-brand .logo-container {
+        width: 35px;
+        height: 35px;
+        margin-left: 10px;
+      }
+      
+      .quran-verse {
+        font-size: 1.2rem;
+        padding: 15px;
+        margin: 3rem auto;
+      }
+      
+      .prayer-header h2 {
+        font-size: 2rem;
+      }
+      
+      .prayer-header p {
+        font-size: 1.1rem;
+      }
+      
+      .current-date-display {
+        font-size: 1.2rem;
+      }
+      
+      .hijri-date {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- شريط التنقل المميز -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-container">
+          <i class="fas fa-kaaba logo-icon floating-icon"></i>
+        </span>
+        بوابة الحج والعمرة
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="prayer-times.html"><i class="fas fa-clock"></i> مواقيت الصلاة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hajj.html"><i class="fas fa-kaaba"></i> الحج</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="umrah.html"><i class="fas fa-mosque"></i> العمرة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="duas.html"><i class="fas fa-hands-praying"></i> الدعية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- قسم البطل المميز -->
+  <header class="hero-section">
+    <div class="hero-text container">
+      <h1 class="mb-4 animate__animated animate__fadeInUp">مواقيت الصلاة اليومية</h1>
+    </div>
+  </header>
+
+  <!-- قسم مواقيت الصلاة الرئيسي -->
+  <section class="prayer-times-main">
+    <div class="container">
+      <div class="prayer-header">
+        <h2 class="animate__animated animate__fadeInUp">مواقيت الصلاة حسب التوقيت المحلي</h2>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">تعرف على أوقات الصلاة في مدينتك ومواعيد الأذان والإقامة</p>
+      </div>
+      
+      <div class="date-selector animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="location-date-container">
+          <div class="location-selector">
+            <label for="city-select"><i class="fas fa-location-dot me-2"></i>اختر مدينتك:</label>
+            <select id="city-select" class="form-select">
+              <option value="makkah">مكة المكرمة</option>
+              <option value="madina">المدينة المنورة</option>
+              <option value="riyadh">الرياض</option>
+              <option value="jeddah">جدة</option>
+              <option value="dammam">الدمام</option>
+              <option value="taif">الطائف</option>
+              <option value="yanbu">ينبع</option>
+              <option value="hafralbatin">حفر الباطن</option>
+              <option value="abha">أبها</option>
+              <option value="tabuk">تبوك</option>
+              <option value="qassim">القصيم</option>
+              <option value="hail">حائل</option>
+              <option value="jazan">جازان</option>
+              <option value="najran">نجران</option>
+              <option value="bahah">الباحة</option>
+            </select>
+          </div>
+          
+          <div class="date-picker">
+            <label for="date-select"><i class="fas fa-calendar-days me-2"></i>اختر التاريخ:</label>
+            <input type="date" id="date-select" class="form-control" min="" max="">
+          </div>
+        </div>
+        
+        <div class="current-date-display">
+          <span id="current-date"></span>
+          <div class="hijri-date" id="hijri-date"></div>
+        </div>
+      </div>
+      
+      <div class="prayer-times-grid">
+        <!-- الفجر -->
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="prayer-icon"><i class="fas fa-moon"></i></div>
+          <div class="prayer-name">صلاة الفجر</div>
+          <div class="prayer-time" id="fajr-time">4:30 ص</div>
+          <div class="prayer-remaining" id="fajr-remaining">باقي 5 ساعات و 20 دقيقة</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="fajr-adhan">4:30 ص</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="fajr-iqama">4:45 ص</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="fajr-end">5:45 ص</span></p>
+          </div>
+        </div>
+        
+        <!-- الشروق -->
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="prayer-icon"><i class="fas fa-sun"></i></div>
+          <div class="prayer-name">وقت الشروق</div>
+          <div class="prayer-time" id="sunrise-time">6:15 ص</div>
+          <div class="prayer-remaining" id="sunrise-remaining">باقي 7 ساعات و 5 دقائق</div>
+          
+          <div class="prayer-details">
+            <p>بداية وقت النهي عن الصلاة</p>
+            <p>يستمر حتى: <span class="iqama-time" id="sunrise-end">12:30 م</span></p>
+          </div>
+        </div>
+        
+        <!-- الظهر -->
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-4s" id="dhuhr-card">
+          <div class="prayer-next" id="current-prayer-label">الصلاة الحالية</div>
+          <div class="prayer-icon"><i class="fas fa-sun"></i></div>
+          <div class="prayer-name">صلاة الظهر</div>
+          <div class="prayer-time" id="dhuhr-time">12:30 م</div>
+          <div class="prayer-remaining" id="dhuhr-remaining">الوقت الحالي</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="dhuhr-adhan">12:30 م</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="dhuhr-iqama">12:45 م</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="dhuhr-end">3:45 م</span></p>
+          </div>
+        </div>
+        
+        <!-- العصر -->
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-4s">
+          <div class="prayer-icon"><i class="fas fa-cloud-sun"></i></div>
+          <div class="prayer-name">صلاة العصر</div>
+          <div class="prayer-time" id="asr-time">3:45 م</div>
+          <div class="prayer-remaining" id="asr-remaining">باقي 3 ساعات و 15 دقيقة</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="asr-adhan">3:45 م</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="asr-iqama">4:00 م</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="asr-end">6:30 م</span></p>
+          </div>
+        </div>
+        
+        <!-- المغرب -->
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-5s">
+          <div class="prayer-icon"><i class="fas fa-sunset"></i></div>
+          <div class="prayer-name">صلاة المغرب</div>
+          <div class="prayer-time" id="maghrib-time">6:30 م</div>
+          <div class="prayer-remaining" id="maghrib-remaining">باقي 6 ساعات</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="maghrib-adhan">6:30 م</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="maghrib-iqama">6:35 م</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="maghrib-end">8:00 م</span></p>
+          </div>
+        </div>
+        
+        <!-- العشاء -->
+        <div class="prayer-card animate__animated animate__fadeInUp animate__delay-5s">
+          <div class="prayer-icon"><i class="fas fa-moon"></i></div>
+          <div class="prayer-name">صلاة العشاء</div>
+          <div class="prayer-time" id="isha-time">8:00 م</div>
+          <div class="prayer-remaining" id="isha-remaining">باقي 7 ساعات و 50 دقيقة</div>
+          
+          <div class="prayer-details">
+            <p>وقت الأذان: <span class="iqama-time" id="isha-adhan">8:00 م</span></p>
+            <p>وقت الإقامة: <span class="iqama-time" id="isha-iqama">8:15 م</span></p>
+            <p>ينتهي وقت الصلاة: <span class="iqama-time" id="isha-end">4:30 ص</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="quran-verse animate__animated animate__fadeIn animate__delay-6s">
+        إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا
+        <span class="verse-reference">سورة النساء - الآية 103</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- سكربتات -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hijri-date@1.0.4/hijri-date.min.js"></script>
+  <script>
+    // تأثير التمرير لشريط التنقل
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // تحميل الصفحة بسلاسة
+    window.addEventListener('load', function() {
+      document.body.style.opacity = '1';
+      document.body.style.transition = 'opacity 0.7s ease';
+      
+      // تعيين الحد الأدنى والأقصى لتاريخ الاختيار
+      const today = new Date();
+      const dateInput = document.getElementById('date-select');
+      const minDate = new Date();
+      const maxDate = new Date();
+      maxDate.setMonth(today.getMonth() + 3); // 3 أشهر من اليوم
+      
+      dateInput.min = formatDateForInput(minDate);
+      dateInput.max = formatDateForInput(maxDate);
+      dateInput.value = formatDateForInput(today);
+      
+      // تحديث التاريخ الهجري
+      updateHijriDate(today);
+      
+      // تحديث مواعيد الصلاة حسب المدينة المختارة والتاريخ
+      const citySelect = document.getElementById('city-select');
+      citySelect.addEventListener('change', function() {
+        updatePrayerTimes(this.value, dateInput.value);
+      });
+      
+      dateInput.addEventListener('change', function() {
+        updatePrayerTimes(citySelect.value, this.value);
+        const selectedDate = new Date(this.value);
+        updateHijriDate(selectedDate);
+      });
+      
+      // تحديث أولي لمواعيد الصلاة
+      updatePrayerTimes('makkah', formatDateForInput(today));
+      
+      // تحديث الوقت المتبقي كل دقيقة
+      setInterval(function() {
+        updateRemainingTimes();
+        updateCurrentPrayer();
+      }, 60000);
+      
+      // تحديث أولي للوقت المتبقي والصلاة الحالية
+      updateRemainingTimes();
+      updateCurrentPrayer();
+    });
+    
+    // تنسيق التاريخ لعنصر الإدخال
+    function formatDateForInput(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+    
+    // تحديث التاريخ الهجري
+    function updateHijriDate(date) {
+      const hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      }).format(date);
+      
+      document.getElementById('hijri-date').textContent = hijriDate;
+      
+      // تحديث عرض التاريخ الميلادي
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const gregorianDate = date.toLocaleDateString('ar-SA', options);
+      document.getElementById('current-date').textContent = gregorianDate;
+    }
+    
+    // وظيفة لتحديث مواعيد الصلاة حسب المدينة والتاريخ
+    function updatePrayerTimes(city, dateStr) {
+      // هذه بيانات افتراضية، في التطبيق الحقيقي يجب جلبها من API
+      const prayerData = getPrayerTimesForCityAndDate(city, dateStr);
+      
+      // تحديث الأوقات في الصفحة
+      document.getElementById('fajr-time').textContent = prayerData.fajr;
+      document.getElementById('sunrise-time').textContent = prayerData.sunrise;
+      document.getElementById('dhuhr-time').textContent = prayerData.dhuhr;
+      document.getElementById('asr-time').textContent = prayerData.asr;
+      document.getElementById('maghrib-time').textContent = prayerData.maghrib;
+      document.getElementById('isha-time').textContent = prayerData.isha;
+      
+      // تحديث أوقات الأذان والإقامة
+      document.getElementById('fajr-adhan').textContent = prayerData.fajr;
+      document.getElementById('fajr-iqama').textContent = addMinutes(prayerData.fajr, 15);
+      document.getElementById('fajr-end').textContent = prayerData.sunrise;
+      
+      document.getElementById('dhuhr-adhan').textContent = prayerData.dhuhr;
+      document.getElementById('dhuhr-iqama').textContent = addMinutes(prayerData.dhuhr, 15);
+      document.getElementById('dhuhr-end').textContent = prayerData.asr;
+      
+      document.getElementById('asr-adhan').textContent = prayerData.asr;
+      document.getElementById('asr-iqama').textContent = addMinutes(prayerData.asr, 15);
+      document.getElementById('asr-end').textContent = prayerData.maghrib;
+      
+      document.getElementById('maghrib-adhan').textContent = prayerData.maghrib;
+      document.getElementById('maghrib-iqama').textContent = addMinutes(prayerData.maghrib, 5);
+      document.getElementById('maghrib-end').textContent = prayerData.isha;
+      
+      document.getElementById('isha-adhan').textContent = prayerData.isha;
+      document.getElementById('isha-iqama').textContent = addMinutes(prayerData.isha, 15);
+      document.getElementById('isha-end').textContent = prayerData.nextFajr || prayerData.fajr;
+      
+      document.getElementById('sunrise-end').textContent = prayerData.dhuhr;
+      
+      // تحديث الوقت المتبقي
+      updateRemainingTimes();
+      
+      // تحديث الصلاة الحالية
+      updateCurrentPrayer();
+    }
+    
+    // إضافة دقائق إلى وقت الصلاة (لحساب وقت الإقامة)
+    function addMinutes(timeStr, minutesToAdd) {
+      const [time, period] = timeStr.split(' ');
+      let [hours, minutes] = time.split(':').map(Number);
+      
+      if (period === 'م' && hours !== 12) hours += 12;
+      if (period === 'ص' && hours === 12) hours = 0;
+      
+      let totalMinutes = hours * 60 + minutes + minutesToAdd;
+      
+      // التأكد من أن الوقت لا يتجاوز 24 ساعة
+      totalMinutes = totalMinutes % (24 * 60);
+      if (totalMinutes < 0) totalMinutes += 24 * 60;
+      
+      hours = Math.floor(totalMinutes / 60);
+      minutes = totalMinutes % 60;
+      
+      let newPeriod = 'ص';
+      if (hours >= 12) {
+        newPeriod = 'م';
+        if (hours > 12) hours -= 12;
+      }
+      if (hours === 0) hours = 12;
+      
+      return `${hours}:${String(minutes).padStart(2, '0')} ${newPeriod}`;
+    }
+    
+    // حساب الوقت المتبقي لكل صلاة
+    function updateRemainingTimes() {
+      const now = new Date();
+      const currentHours = now.getHours();
+      const currentMinutes = now.getMinutes();
+      const currentTime = currentHours * 60 + currentMinutes;
+      
+      // الحصول على أوقات الصلاة ككائنات Date
+      const prayerTimes = getPrayerTimesAsDates();
+      
+      // حساب الوقت المتبقي لكل صلاة
+      const remainingTimes = {};
+      for (const prayer in prayerTimes) {
+        if (prayerTimes[prayer] > now) {
+          const diffMs = prayerTimes[prayer] - now;
+          const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+          const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+          remainingTimes[prayer] = `باقي ${diffHours} ساعات و ${diffMinutes} دقيقة`;
+        } else {
+          remainingTimes[prayer] = 'انتهى وقت الصلاة';
+        }
+      }
+      
+      // تحديث واجهة المستخدم
+      document.getElementById('fajr-remaining').textContent = remainingTimes.fajr || '--';
+      document.getElementById('sunrise-remaining').textContent = remainingTimes.sunrise || '--';
+      document.getElementById('dhuhr-remaining').textContent = remainingTimes.dhuhr || '--';
+      document.getElementById('asr-remaining').textContent = remainingTimes.asr || '--';
+      document.getElementById('maghrib-remaining').textContent = remainingTimes.maghrib || '--';
+      document.getElementById('isha-remaining').textContent = remainingTimes.isha || '--';
+    }
+    
+    // تحويل أوقات الصلاة إلى كائنات Date
+    function getPrayerTimesAsDates() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth();
+      const day = now.getDate();
+      
+      const times = {};
+      const prayerElements = {
+        fajr: document.getElementById('fajr-time'),
+        sunrise: document.getElementById('sunrise-time'),
+        dhuhr: document.getElementById('dhuhr-time'),
+        asr: document.getElementById('asr-time'),
+        maghrib: document.getElementById('maghrib-time'),
+        isha: document.getElementById('isha-time')
+      };
+      
+      for (const prayer in prayerElements) {
+        const timeStr = prayerElements[prayer].textContent;
+        const [time, period] = timeStr.split(' ');
+        let [hours, minutes] = time.split(':').map(Number);
+        
+        if (period === 'م' && hours !== 12) hours += 12;
+        if (period === 'ص' && hours === 12) hours = 0;
+        
+        // إذا كانت الصلاة في اليوم التالي (مثل العشاء التي تنتهي بفجر اليوم التالي)
+        const isNextDay = prayer === 'isha' && hours < 6; // افتراض أن الفجر حوالي 4-5 ص
+        
+        times[prayer] = new Date(year, month, isNextDay ? day + 1 : day, hours, minutes);
+      }
+      
+      return times;
+    }
+    
+    // تحديد الصلاة الحالية
+    function updateCurrentPrayer() {
+      const now = new Date();
+      const prayerTimes = getPrayerTimesAsDates();
+      
+      // إزالة الفئة الحالية من جميع البطاقات
+      document.querySelectorAll('.prayer-card').forEach(card => {
+        card.classList.remove('current');
+      });
+      
+      // تحديد الصلاة الحالية
+      let currentPrayer = null;
+      const prayersOrder = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
+      
+      for (let i = 0; i < prayersOrder.length; i++) {
+        const prayer = prayersOrder[i];
+        const nextPrayer = prayersOrder[i + 1] || prayersOrder[0]; // العودة للفجر إذا كانت آخر صلاة
+        
+        if (now >= prayerTimes[prayer] && now < prayerTimes[nextPrayer]) {
+          currentPrayer = prayer;
+          break;
+        }
+      }
+      
+      // إضافة الفئة الحالية للبطاقة المناسبة
+      if (currentPrayer) {
+        const currentCard = document.getElementById(`${currentPrayer}-card`) || 
+                           document.querySelector(`.prayer-card:nth-child(${prayersOrder.indexOf(currentPrayer) + 1}`);
+        if (currentCard) {
+          currentCard.classList.add('current');
+          document.getElementById('current-prayer-label').textContent = 'الصلاة الحالية';
+        }
+      }
+    }
+    
+    // بيانات مواقيت الصلاة لجميع المدن (افتراضية - يجب استبدالها ببيانات حقيقية من API)
+    function getPrayerTimesForCityAndDate(city, dateStr) {
+      // تحويل تاريخ السلسلة إلى كائن Date
+      const date = new Date(dateStr);
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      
+      // بيانات افتراضية تتغير حسب الشهر واليوم
+      // هذه مجرد أمثلة - في التطبيق الحقيقي يجب حساب الأوقات بدقة أو جلبها من API
+      const baseTimes = {
+        makkah: {
+          fajr: `${4 + Math.floor(day/10)}:${30 - (day % 3)} ص`,
+          sunrise: `${6 + Math.floor(day/15)}:${15 + (day % 5)} ص`,
+          dhuhr: `${12}:${30 - (day % 2)} م`,
+          asr: `${3 + Math.floor(day/10)}:${45 - (day % 4)} م`,
+          maghrib: `${6 + Math.floor(day/15)}:${30 - (day % 3)} م`,
+          isha: `${8 - Math.floor(day/20)}:${0 + (day % 5)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/10)}:${30 - ((day+1) % 3)} ص`
+        },
+        madina: {
+          fajr: `${4 + Math.floor(day/12)}:${45 - (day % 4)} ص`,
+          sunrise: `${6 + Math.floor(day/18)}:${30 + (day % 6)} ص`,
+          dhuhr: `${12}:${45 - (day % 3)} م`,
+          asr: `${4 + Math.floor(day/12)}:${0 - (day % 5)} م`,
+          maghrib: `${6 + Math.floor(day/18)}:${45 - (day % 4)} م`,
+          isha: `${8 - Math.floor(day/22)}:${15 + (day % 6)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/12)}:${45 - ((day+1) % 4)} ص`
+        },
+        riyadh: {
+          fajr: `${4 + Math.floor(day/8)}:${15 - (day % 2)} ص`,
+          sunrise: `${5 + Math.floor(day/12)}:${45 + (day % 4)} ص`,
+          dhuhr: `${12}:${15 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/8)}:${30 - (day % 3)} م`,
+          maghrib: `${6 + Math.floor(day/12)}:${15 - (day % 2)} م`,
+          isha: `${7 - Math.floor(day/18)}:${45 + (day % 4)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/8)}:${15 - ((day+1) % 2)} ص`
+        },
+        jeddah: {
+          fajr: `${4 + Math.floor(day/10)}:${40 - (day % 3)} ص`,
+          sunrise: `${6 + Math.floor(day/15)}:${20 + (day % 5)} ص`,
+          dhuhr: `${12}:${40 - (day % 2)} م`,
+          asr: `${4 + Math.floor(day/10)}:${0 - (day % 4)} م`,
+          maghrib: `${6 + Math.floor(day/15)}:${40 - (day % 3)} م`,
+          isha: `${8 - Math.floor(day/20)}:${10 + (day % 5)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/10)}:${40 - ((day+1) % 3)} ص`
+        },
+        dammam: {
+          fajr: `${4 + Math.floor(day/7)}:${0 - (day % 1)} ص`,
+          sunrise: `${5 + Math.floor(day/10)}:${30 + (day % 3)} ص`,
+          dhuhr: `${12}:${0 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/7)}:${15 - (day % 2)} م`,
+          maghrib: `${6 + Math.floor(day/10)}:${0 - (day % 1)} م`,
+          isha: `${7 - Math.floor(day/15)}:${30 + (day % 3)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/7)}:${0 - ((day+1) % 1)} ص`
+        },
+        taif: {
+          fajr: `${4 + Math.floor(day/11)}:${50 - (day % 4)} ص`,
+          sunrise: `${6 + Math.floor(day/16)}:${30 + (day % 6)} ص`,
+          dhuhr: `${12}:${50 - (day % 3)} م`,
+          asr: `${4 + Math.floor(day/11)}:${10 - (day % 5)} م`,
+          maghrib: `${6 + Math.floor(day/16)}:${50 - (day % 4)} م`,
+          isha: `${8 - Math.floor(day/21)}:${20 + (day % 6)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/11)}:${50 - ((day+1) % 4)} ص`
+        },
+        yanbu: {
+          fajr: `${4 + Math.floor(day/10)}:${35 - (day % 3)} ص`,
+          sunrise: `${6 + Math.floor(day/15)}:${25 + (day % 5)} ص`,
+          dhuhr: `${12}:${35 - (day % 2)} م`,
+          asr: `${3 + Math.floor(day/10)}:${50 - (day % 4)} م`,
+          maghrib: `${6 + Math.floor(day/15)}:${35 - (day % 3)} م`,
+          isha: `${8 - Math.floor(day/20)}:${5 + (day % 5)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/10)}:${35 - ((day+1) % 3)} ص`
+        },
+        hafralbatin: {
+          fajr: `${4 + Math.floor(day/8)}:${10 - (day % 1)} ص`,
+          sunrise: `${5 + Math.floor(day/12)}:${50 + (day % 4)} ص`,
+          dhuhr: `${12}:${10 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/8)}:${20 - (day % 2)} م`,
+          maghrib: `${6 + Math.floor(day/12)}:${10 - (day % 1)} م`,
+          isha: `${7 - Math.floor(day/18)}:${50 + (day % 4)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/8)}:${10 - ((day+1) % 1)} ص`
+        },
+        abha: {
+          fajr: `${4 + Math.floor(day/9)}:${20 - (day % 2)} ص`,
+          sunrise: `${6 + Math.floor(day/14)}:${10 + (day % 4)} ص`,
+          dhuhr: `${12}:${20 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/9)}:${40 - (day % 3)} م`,
+          maghrib: `${6 + Math.floor(day/14)}:${20 - (day % 2)} م`,
+          isha: `${7 - Math.floor(day/19)}:${10 + (day % 4)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/9)}:${20 - ((day+1) % 2)} ص`
+        },
+        tabuk: {
+          fajr: `${4 + Math.floor(day/9)}:${25 - (day % 2)} ص`,
+          sunrise: `${6 + Math.floor(day/14)}:${15 + (day % 4)} ص`,
+          dhuhr: `${12}:${25 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/9)}:${45 - (day % 3)} م`,
+          maghrib: `${6 + Math.floor(day/14)}:${25 - (day % 2)} م`,
+          isha: `${7 - Math.floor(day/19)}:${15 + (day % 4)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/9)}:${25 - ((day+1) % 2)} ص`
+        },
+        qassim: {
+          fajr: `${4 + Math.floor(day/8)}:${20 - (day % 2)} ص`,
+          sunrise: `${5 + Math.floor(day/12)}:${50 + (day % 4)} ص`,
+          dhuhr: `${12}:${20 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/8)}:${30 - (day % 3)} م`,
+          maghrib: `${6 + Math.floor(day/12)}:${20 - (day % 2)} م`,
+          isha: `${7 - Math.floor(day/18)}:${50 + (day % 4)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/8)}:${20 - ((day+1) % 2)} ص`
+        },
+        hail: {
+          fajr: `${4 + Math.floor(day/8)}:${15 - (day % 1)} ص`,
+          sunrise: `${5 + Math.floor(day/12)}:${45 + (day % 4)} ص`,
+          dhuhr: `${12}:${15 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/8)}:${25 - (day % 2)} م`,
+          maghrib: `${6 + Math.floor(day/12)}:${15 - (day % 1)} م`,
+          isha: `${7 - Math.floor(day/18)}:${45 + (day % 4)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/8)}:${15 - ((day+1) % 1)} ص`
+        },
+        jazan: {
+          fajr: `${4 + Math.floor(day/10)}:${25 - (day % 2)} ص`,
+          sunrise: `${6 + Math.floor(day/15)}:${15 + (day % 5)} ص`,
+          dhuhr: `${12}:${25 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/10)}:${45 - (day % 3)} م`,
+          maghrib: `${6 + Math.floor(day/15)}:${25 - (day % 2)} م`,
+          isha: `${7 - Math.floor(day/20)}:${15 + (day % 5)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/10)}:${25 - ((day+1) % 2)} ص`
+        },
+        najran: {
+          fajr: `${4 + Math.floor(day/10)}:${20 - (day % 1)} ص`,
+          sunrise: `${6 + Math.floor(day/15)}:${10 + (day % 5)} ص`,
+          dhuhr: `${12}:${20 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/10)}:${40 - (day % 3)} م`,
+          maghrib: `${6 + Math.floor(day/15)}:${20 - (day % 1)} م`,
+          isha: `${7 - Math.floor(day/20)}:${10 + (day % 5)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/10)}:${20 - ((day+1) % 1)} ص`
+        },
+        bahah: {
+          fajr: `${4 + Math.floor(day/9)}:${30 - (day % 2)} ص`,
+          sunrise: `${6 + Math.floor(day/14)}:${20 + (day % 4)} ص`,
+          dhuhr: `${12}:${30 - (day % 1)} م`,
+          asr: `${3 + Math.floor(day/9)}:${50 - (day % 3)} م`,
+          maghrib: `${6 + Math.floor(day/14)}:${30 - (day % 2)} م`,
+          isha: `${7 - Math.floor(day/19)}:${20 + (day % 4)} م`,
+          nextFajr: `${4 + Math.floor((day+1)/9)}:${30 - ((day+1) % 2)} ص`
+        }
+      };
+      
+      return baseTimes[city] || baseTimes.makkah;
+    }
+  </script>
+</body>
+</html>

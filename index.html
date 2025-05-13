@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="بوابة الحج والعمرة - دليلك الشامل لأداء المناسك بطريقة صحيحة وميسرة">
+  <meta name="keywords" content="الحج, العمرة, مناسك, الكعبة, مكة, المدينة, السعودية">
+  <meta name="author" content="بوابة الحج والعمرة">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3171/3171170.png">
+  
+  <title>بوابة الحج والعمرة | الرئيسية</title>
+
+  <!-- روابط CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@400;700&family=Scheherazade+New:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --dark-green: #0a240a;
+      --gold: #c6a664;
+      --light-beige: #f5f0e4;
+      --dark-brown: #3a2a20;
+      --cream: #fcf8ee;
+      --olive-green: #3c4b23;
+      --gold-light: rgba(198, 166, 100, 0.8);
+      --gold-dark: #b5881e;
+      --green-light: rgba(10, 36, 10, 0.95);
+      --green-darker: #051905;
+      --gradient-holy: linear-gradient(135deg, #0a240a, #1a4722, #3c4b23);
+    }
+    
+    body {
+      font-family: 'Amiri', 'Lateef', 'Scheherazade New', serif;
+      background-color: var(--light-beige);
+      color: var(--dark-brown);
+      line-height: 1.9;
+      overflow-x: hidden;
+      text-align: right;
+      scroll-behavior: smooth;
+    }
+    
+    /* شريط التنقل المتميز */
+    .navbar {
+      background: var(--gradient-holy) !important;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      padding: 12px 0;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      border-bottom: 2px solid var(--gold);
+      backdrop-filter: blur(8px);
+    }
+    
+    .navbar.scrolled {
+      padding: 8px 0;
+      background: rgba(10, 36, 10, 0.98) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .navbar-brand {
+      color: var(--gold) !important;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      font-family: 'Lateef', serif;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .navbar-brand:hover {
+      transform: translateY(-3px);
+      text-shadow: 0 0 15px rgba(198, 166, 100, 0.8);
+    }
+    
+    .navbar-brand::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 3px;
+      background: var(--gold);
+      transition: all 0.5s ease;
+    }
+    
+    .navbar-brand:hover::before {
+      width: 100%;
+    }
+    
+    .logo-container {
+      position: relative;
+      width: 80px;
+      height: 50px;
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo-icon {
+      transition: all 0.6s ease;
+      filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5));
+      position: relative;
+      z-index: 1;
+    }
+    
+    .kaaba-icon {
+      color: var(--gold);
+      font-size: 2rem;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .moon-icon {
+      color: var(--cream);
+      font-size: 1.6rem;
+      margin-right: 10px;
+      animation: glow 4s ease-in-out infinite alternate;
+    }
+    
+    .nav-link {
+      color: var(--cream) !important;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 12px;
+      padding: 12px 25px !important;
+      border-radius: 50px;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      position: relative;
+      font-family: 'Tajawal', sans-serif;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      border: 1px solid transparent;
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(198, 166, 100, 0.2), transparent);
+      transform: translateX(-100%);
+      transition: all 0.6s ease;
+      z-index: -1;
+    }
+    
+    .nav-link:hover {
+      color: var(--gold) !important;
+      transform: translateY(-5px);
+      text-shadow: 0 0 15px rgba(198, 166, 100, 0.8);
+      border-color: rgba(198, 166, 100, 0.3);
+    }
+    
+    .nav-link:hover::before {
+      transform: translateX(0);
+    }
+    
+    .nav-link.active {
+      background: linear-gradient(135deg, var(--gold-light), rgba(198, 166, 100, 0.7));
+      color: var(--dark-brown) !important;
+      font-weight: 700;
+      box-shadow: 0 8px 30px rgba(198, 166, 100, 0.5);
+      border: 1px solid rgba(198, 166, 100, 0.5);
+    }
+    
+    .nav-link i {
+      margin-left: 15px;
+      font-size: 1.2em;
+      transition: all 0.5s ease;
+    }
+    
+    .nav-link:hover i {
+      transform: scale(1.4) rotate(15deg);
+      color: var(--gold-dark);
+    }
+    
+    /* قسم البطل المميز مع تأثيرات جديدة */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+      background: linear-gradient(rgba(10, 36, 10, 0.85), rgba(60, 75, 35, 0.85)), 
+                  url('images/hero-bg.jfif') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/arabesque.png') repeat;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, var(--light-beige), transparent);
+      z-index: 2;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 60px 0;
+    }
+    
+    .welcome-card {
+      background: rgba(252, 248, 238, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
+      padding: 50px;
+      margin-bottom: 50px;
+      border: 1px solid rgba(198, 166, 100, 0.5);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    
+    .welcome-card:hover {
+      transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+      box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4);
+      border-color: rgba(198, 166, 100, 0.8);
+    }
+    
+    .welcome-card h1 {
+      font-size: 4.2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      line-height: 1.3;
+      font-family: 'Lateef', serif;
+      color: var(--gold);
+      text-shadow: 3px 4px 10px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(to bottom, var(--gold), #e8d9b5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+    
+    .welcome-card h1::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      right: 0;
+      width: 150px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      border-radius: 2px;
+    }
+    
+    .welcome-card p {
+      font-size: 2.2rem;
+      margin-bottom: 0;
+      opacity: 0.95;
+      font-family: 'Amiri', serif;
+      color: var(--cream);
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* إضافة آيات قرآنية مميزة مع تأثيرات */
+    .quran-verse {
+      font-size: 2.1rem;
+      font-family: 'Scheherazade New', serif;
+      color: var(--gold);
+      margin: 3rem auto;
+      max-width: 900px;
+      padding: 50px;
+      border-radius: 25px;
+      background: rgba(10, 36, 10, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(198, 166, 100, 0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      position: relative;
+      line-height: 2.4;
+      transition: all 0.8s ease;
+      transform-style: preserve-3d;
+    }
+    
+    .quran-verse:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.35);
+    }
+    
+    .quran-verse::before,
+    .quran-verse::after {
+      content: '"';
+      font-size: 6rem;
+      color: var(--gold-light);
+      position: absolute;
+      opacity: 0.3;
+      font-family: 'Amiri', serif;
+      transition: all 0.6s ease;
+    }
+    
+    .quran-verse::before {
+      top: -30px;
+      right: 30px;
+    }
+    
+    .quran-verse::after {
+      bottom: -60px;
+      left: 30px;
+    }
+    
+    .quran-verse:hover::before {
+      transform: translateY(-10px);
+      opacity: 0.5;
+    }
+    
+    .quran-verse:hover::after {
+      transform: translateY(10px);
+      opacity: 0.5;
+    }
+    
+    .verse-reference {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--cream);
+      margin-top: 30px;
+      font-style: italic;
+      font-family: 'Tajawal', sans-serif;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* أزرار بطولية */
+    .hero-btn {
+      padding: 15px 35px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      border: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      font-family: 'Tajawal', sans-serif;
+    }
+    
+    .hero-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      z-index: -1;
+      transition: all 0.6s ease;
+    }
+    
+    .hero-btn:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero-btn:hover::before {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    }
+    
+    .hero-btn-outline {
+      background: transparent;
+      border: 2px solid var(--cream);
+      color: var(--cream);
+    }
+    
+    .hero-btn-outline:hover {
+      background: rgba(252, 248, 238, 0.2);
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    
+    /* سلايدر الأذكار المتميز */
+    .azkar-slider {
+      background: var(--gradient-holy);
+      padding: 150px 0;
+      margin-top: -1px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .azkar-slider::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/arabesque.png') repeat;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    .azkar-slider::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, var(--light-beige), transparent);
+      z-index: 1;
+    }
+    
+    .azkar-slider .section-title {
+      color: var(--gold);
+      font-family: 'Lateef', serif;
+      font-size: 3.5rem;
+      margin-bottom: 80px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.6);
+    }
+    
+    .azkar-slider .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 3px;
+    }
+    
+    .azkar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .azkar-slide {
+      background: rgba(252, 248, 238, 0.1);
+      border-radius: 30px;
+      padding: 80px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(198, 166, 100, 0.5);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      text-align: center;
+      margin: 0 20px;
+      transform-style: preserve-3d;
+    }
+    
+    .azkar-slide:hover {
+      transform: translateY(-15px) rotateX(5deg);
+      box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4);
+      border-color: rgba(198, 166, 100, 0.8);
+    }
+    
+    .zekr-text {
+      font-size: 2.5rem;
+      color: var(--gold);
+      font-family: 'Amiri', serif;
+      margin-bottom: 40px;
+      line-height: 2.8;
+      position: relative;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .zekr-text::before,
+    .zekr-text::after {
+      content: '"';
+      font-size: 4.5rem;
+      color: var(--gold-light);
+      position: absolute;
+      opacity: 0.5;
+      transition: all 0.6s ease;
+      font-family: 'Amiri', serif;
+    }
+    
+    .zekr-text::before {
+      top: -35px;
+      right: -30px;
+    }
+    
+    .zekr-text::after {
+      bottom: -45px;
+      left: -30px;
+    }
+    
+    .azkar-slide:hover .zekr-text::before,
+    .azkar-slide:hover .zekr-text::after {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+    
+    .zekr-reference {
+      font-size: 1.6rem;
+      color: var(--cream);
+      font-family: 'Tajawal', sans-serif;
+      font-style: italic;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .azkar-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+    }
+    
+    .azkar-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(252, 248, 238, 0.3);
+      margin: 0 12px;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .azkar-dot::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+      transform: scale(0);
+      border-radius: 50%;
+      transition: all 0.5s ease;
+    }
+    
+    .azkar-dot:hover {
+      transform: scale(1.8);
+    }
+    
+    .azkar-dot.active {
+      transform: scale(1.8);
+    }
+    
+    .azkar-dot.active::before {
+      transform: scale(1);
+    }
+    
+    /* قسم الأكورديون المتميز */
+    .islamic-accordion {
+      padding: 150px 0;
+      background-color: var(--light-beige);
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/rice_paper_v3.png');
+      position: relative;
+    }
+    
+    .islamic-accordion::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to bottom, var(--light-beige), transparent);
+      z-index: 1;
+    }
+    
+    .islamic-accordion::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, var(--light-beige), transparent);
+      z-index: 1;
+    }
+    
+    .accordion-title {
+      color: var(--dark-green);
+      font-family: 'Lateef', serif;
+      font-size: 3.5rem;
+      margin-bottom: 80px;
+      text-align: center;
+      position: relative;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .accordion-title::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 300px;
+      height: 5px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 3px;
+    }
+    
+    .accordion-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .accordion-item {
+      margin-bottom: 25px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      background-color: var(--cream);
+      border: 1px solid rgba(198, 166, 100, 0.4);
+      transform-style: preserve-3d;
+    }
+    
+    .accordion-item:hover {
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      transform: translateY(-10px);
+    }
+    
+    .accordion-header {
+      padding: 0;
+      border: none;
+      background: none;
+    }
+    
+    .accordion-button {
+      width: 100%;
+      padding: 30px 40px;
+      text-align: right;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--dark-green);
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(to right, rgba(198, 166, 100, 0.1), rgba(198, 166, 100, 0.4));
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .accordion-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(198, 166, 100, 0.3), rgba(198, 166, 100, 0.6));
+      transform: translateX(-100%);
+      transition: all 0.6s ease;
+      z-index: -1;
+    }
+    
+    .accordion-button:hover {
+      color: var(--dark-brown);
+    }
+    
+    .accordion-button:hover::before {
+      transform: translateX(0);
+    }
+    
+    .accordion-button:not(.collapsed) {
+      background: linear-gradient(to right, rgba(198, 166, 100, 0.4), rgba(198, 166, 100, 0.7));
+      color: var(--dark-brown);
+    }
+    
+    .accordion-button::after {
+      content: '\f078';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-left: 20px;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform: rotate(0deg);
+      color: var(--dark-green);
+    }
+    
+    .accordion-button:not(.collapsed)::after {
+      transform: rotate(180deg);
+      color: var(--dark-brown);
+    }
+    
+    .accordion-body {
+      padding: 0;
+      transition: all 0.8s ease;
+    }
+    
+    .accordion-content {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .accordion-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      transition: all 0.8s ease;
+    }
+    
+    .accordion-item:hover .accordion-image {
+      transform: scale(1.02);
+    }
+    
+    .accordion-details {
+      padding: 40px;
+      font-size: 1.5rem;
+      line-height: 2.2;
+      color: var(--dark-brown);
+      font-family: 'Amiri', serif;
+    }
+    
+    .accordion-details h3 {
+      font-family: 'Tajawal', sans-serif;
+      color: var(--olive-green);
+      margin-bottom: 25px;
+      font-size: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .accordion-details h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      width: 100px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    
+    .accordion-details p {
+      margin-bottom: 25px;
+    }
+    
+    .accordion-details ul {
+      padding-right: 25px;
+    }
+    
+    .accordion-details li {
+      margin-bottom: 15px;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+    
+    .accordion-details li:hover {
+      transform: translateX(-10px);
+    }
+    
+    .accordion-details li::before {
+      content: '\f054';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: -25px;
+      color: var(--gold);
+      transition: all 0.4s ease;
+    }
+    
+    .accordion-details li:hover::before {
+      transform: translateX(10px);
+    }
+    
+    /* قسم الخرائط التفاعلية */
+    .map-section {
+      padding: 150px 0;
+      background: var(--gradient-holy);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .map-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/arabesque.png') repeat;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    .map-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .map-title {
+      color: var(--gold);
+      font-family: 'Lateef', serif;
+      font-size: 3.5rem;
+      margin-bottom: 80px;
+      text-align: center;
+      position: relative;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .map-title::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 300px;
+      height: 5px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 3px;
+    }
+    
+    .map-wrapper {
+      height: 600px;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      border: 2px solid var(--gold);
+      position: relative;
+    }
+    
+    #holySitesMap {
+      height: 100%;
+      width: 100%;
+    }
+    
+    .map-legend {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    
+    .map-legend-item {
+      display: flex;
+      align-items: center;
+      margin: 0 20px 15px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+    }
+    
+    .map-legend-color {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-left: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* تأثيرات حركية متقدمة */
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(50px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px var(--gold-light); box-shadow: 0 0 5px var(--gold-light); }
+      50% { text-shadow: 0 0 20px var(--gold); box-shadow: 0 0 20px var(--gold); }
+      100% { text-shadow: 0 0 5px var(--gold-light); box-shadow: 0 0 5px var(--gold-light); }
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* تأثيرات خاصة */
+    .floating {
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .glowing {
+      animation: glow 4s ease-in-out infinite alternate;
+    }
+    
+    .pulsing {
+      animation: pulse 3s infinite;
+    }
+    
+    /* زر العودة للأعلى المتميز */
+    .back-to-top {
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--dark-brown);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      z-index: 99;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 2px solid var(--cream);
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      transform: translateY(-10px) scale(1.1);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* شريط التقدم */
+    .progress-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 6px;
+      background: transparent;
+      z-index: 1000;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      width: 0%;
+      transition: width 0.1s ease;
+      box-shadow: 0 0 10px var(--gold);
+    }
+    
+    /* تعديلات للجوال */
+    @media (max-width: 1200px) {
+      .welcome-card h1 {
+        font-size: 3.8rem;
+      }
+      
+      .quran-verse {
+        font-size: 1.9rem;
+      }
+      
+      .zekr-text {
+        font-size: 2.2rem;
+      }
+      
+      .accordion-button {
+        font-size: 1.8rem;
+        padding: 25px 35px;
+      }
+      
+      .accordion-details {
+        font-size: 1.4rem;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .welcome-card h1 {
+        font-size: 3.2rem;
+      }
+      
+      .welcome-card p {
+        font-size: 1.8rem;
+      }
+      
+      .quran-verse {
+        font-size: 1.7rem;
+        padding: 40px;
+      }
+      
+      .azkar-slide {
+        padding: 60px;
+      }
+      
+      .zekr-text {
+        font-size: 2rem;
+      }
+      
+      .accordion-button {
+        font-size: 1.6rem;
+        padding: 20px 30px;
+      }
+      
+      .accordion-details {
+        padding: 30px;
+        font-size: 1.3rem;
+      }
+      
+      .accordion-image {
+        height: 350px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section {
+        padding-top: 70px;
+      }
+      
+      .welcome-card {
+        padding: 40px;
+      }
+      
+      .welcome-card h1 {
+        font-size: 2.8rem;
+      }
+      
+      .welcome-card p {
+        font-size: 1.6rem;
+      }
+      
+      .quran-verse {
+        font-size: 1.5rem;
+        padding: 30px;
+      }
+      
+      .azkar-slider {
+        padding: 120px 0;
+      }
+      
+      .azkar-slide {
+        padding: 50px;
+      }
+      
+      .zekr-text {
+        font-size: 1.8rem;
+      }
+      
+      .accordion-button {
+        font-size: 1.5rem;
+        padding: 18px 25px;
+      }
+      
+      .accordion-details {
+        padding: 25px;
+        font-size: 1.2rem;
+      }
+      
+      .accordion-image {
+        height: 300px;
+      }
+      
+      .map-section {
+        padding: 120px 0;
+      }
+      
+      .map-title {
+        font-size: 3rem;
+      }
+      
+      .map-wrapper {
+        height: 500px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .navbar-brand {
+        font-size: 1.5rem;
+      }
+      
+      .logo-container {
+        width: 60px;
+        height: 40px;
+      }
+      
+      .kaaba-icon {
+        font-size: 1.6rem;
+      }
+      
+      .moon-icon {
+        font-size: 1.3rem;
+      }
+      
+      .nav-link {
+        font-size: 1.1rem;
+        padding: 10px 20px !important;
+      }
+      
+      .welcome-card h1 {
+        font-size: 2.4rem;
+      }
+      
+      .welcome-card p {
+        font-size: 1.4rem;
+      }
+      
+      .quran-verse {
+        font-size: 1.3rem;
+        padding: 25px;
+      }
+      
+      .verse-reference {
+        font-size: 1.2rem;
+      }
+      
+      .hero-btn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+      }
+      
+      .azkar-slider .section-title {
+        font-size: 2.8rem;
+      }
+      
+      .azkar-slide {
+        padding: 40px 30px;
+      }
+      
+      .zekr-text {
+        font-size: 1.6rem;
+        line-height: 2.4;
+      }
+      
+      .zekr-reference {
+        font-size: 1.3rem;
+      }
+      
+      .accordion-title {
+        font-size: 2.8rem;
+      }
+      
+      .accordion-button {
+        font-size: 1.4rem;
+        padding: 15px 20px;
+      }
+      
+      .accordion-details {
+        padding: 20px;
+        font-size: 1.1rem;
+      }
+      
+      .accordion-details h3 {
+        font-size: 1.6rem;
+      }
+      
+      .accordion-image {
+        height: 250px;
+      }
+      
+      .map-title {
+        font-size: 2.5rem;
+      }
+      
+      .map-wrapper {
+        height: 400px;
+      }
+      
+      .back-to-top {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        bottom: 30px;
+        left: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- شريط التقدم -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- شريط التنقل المتميز -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-container">
+          <i class="fas fa-moon logo-icon moon-icon floating"></i>
+          <i class="fas fa-kaaba logo-icon kaaba-icon pulsing"></i>
+        </span>
+        بوابة الحج والعمرة
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hajj.html"><i class="fas fa-kaaba"></i> الحج</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="umrah.html"><i class="fas fa-mosque"></i> العمرة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doaa.html"><i class="fas fa-hands-praying"></i> الأدعية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="salat.html"><i class="fas fa-clock"></i> مواقيت الصلاة</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- قسم البطل المتميز -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="welcome-card animate__animated animate__fadeInDown">
+        <h1>بوابة الحج والعمرة الشاملة</h1>
+        <p>دليلكم المتكامل لأداء المناسك بطريقة صحيحة وميسّرة وفق السنة النبوية</p>
+      </div>
+      
+      <div class="quran-verse animate__animated animate__fadeIn">
+        وَأَذِّن فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ رِجَالًا وَعَلَىٰ كُلِّ ضَامِرٍ يَأْتِينَ مِن كُلِّ فَجٍّ عَمِيقٍ
+        <span class="verse-reference">سورة الحج - الآية 27</span>
+      </div>
+      
+      <div class="hero-buttons d-flex flex-wrap justify-content-center animate__animated animate__fadeInUp">
+        <a href="hajj.html" class="btn hero-btn my-2 me-md-3">
+          <i class="fas fa-kaaba me-2"></i>مناسك الحج
+        </a>
+        <a href="umrah.html" class="btn hero-btn hero-btn-outline my-2">
+          <i class="fas fa-mosque me-2"></i>مناسك العمرة
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- سلايدر الأذكار المتميز -->
+  <section class="azkar-slider">
+    <div class="azkar-container">
+      <h2 class="section-title animate__animated animate__fadeIn">أذكار الحج والعمرة</h2>
+      
+      <div class="azkar-slide animate__animated animate__fadeIn">
+        <div class="zekr-text">لبيك اللهم لبيك، لبيك لا شريك لك لبيك، إن الحمد والنعمة لك والملك، لا شريك لك</div>
+        <div class="zekr-reference">دعاء الإحرام</div>
+      </div>
+      
+      <div class="azkar-nav animate__animated animate__fadeInUp">
+        <div class="azkar-dot active"></div>
+        <div class="azkar-dot"></div>
+        <div class="azkar-dot"></div>
+        <div class="azkar-dot"></div>
+        <div class="azkar-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الأكورديون المتميز -->
+  <section class="islamic-accordion">
+    <div class="container">
+      <h2 class="accordion-title animate__animated animate__fadeIn">معالم إسلامية</h2>
+      <div class="accordion-container">
+        <div class="accordion-item animate__animated animate__fadeInUp">
+          <div class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              الكعبة المشرفة - بيت الله الحرام
+            </button>
+          </div>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <img src="images/kaaba-icon.jfif" alt="الكعبة المشرفة" class="accordion-image">
+                <div class="accordion-details">
+                  <h3>الكعبة المشرفة</h3>
+                  <p>الكعبة المشرفة هي قبلة المسلمين في صلواتهم، وحولها يطوف الحجاج، وهي أول بيت وضع للناس في الأرض وفق المعتقد الإسلامي. تقع الكعبة وسط المسجد الحرام في مكة المكرمة بالمملكة العربية السعودية.</p>
+                  <p>تتكون الكعبة من أحجار صلبة، ويبلغ ارتفاعها 15 متراً، ويبلغ طول ضلعها الذي به الباب 12 متراً، وكذلك الضلع الذي يقابله، أما الضلع الذي به الميزاب والذي يقابله، فطول كل منهما 10 أمتار.</p>
+                  <h4>أهمية الكعبة في الإسلام:</h4>
+                  <ul>
+                    <li>أول بيت وضع للناس في الأرض</li>
+                    <li>قبلة المسلمين في الصلاة</li>
+                    <li>يجب الطواف حولها في الحج والعمرة</li>
+                    <li>تحتوي على الحجر الأسود في ركنها الشرقي</li>
+                    <li>يستجاب الدعاء عندها</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              المسجد النبوي الشريف
+            </button>
+          </div>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <img src="images/2.jpeg" alt="المسجد النبوي" class="accordion-image">
+                <div class="accordion-details">
+                  <h3>المسجد النبوي الشريف</h3>
+                  <p>المسجد النبوي هو أحد أكبر المساجد في العالم وثاني أقدس موقع في الإسلام بعد المسجد الحرام في مكة المكرمة. بناه النبي محمد صلى الله عليه وسلم بعد هجرته إلى المدينة المنورة.</p>
+                  <p>يحتوي المسجد النبوي على قبر النبي محمد صلى الله عليه وسلم وقبري صاحبيه أبي بكر الصديق وعمر بن الخطاب رضي الله عنهما، كما يحتوي على الروضة الشريفة التي تعد من رياض الجنة.</p>
+                  <h4>مميزات المسجد النبوي:</h4>
+                  <ul>
+                    <li>ثاني مسجد بني في الإسلام</li>
+                    <li>يحتوي على قبر النبي محمد صلى الله عليه وسلم</li>
+                    <li>يحتوي على الروضة الشريفة</li>
+                    <li>الصلاة فيه تعدل ألف صلاة في غيره من المساجد</li>
+                    <li>يستجاب الدعاء عند الروضة الشريفة</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              جبل عرفة - يوم عرفة
+            </button>
+          </div>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <img src="images/arafat.jfif" alt="جبل عرفة" class="accordion-image">
+                <div class="accordion-details">
+                  <h3>جبل عرفة</h3>
+                  <p>جبل عرفة هو جبل يقع على الطريق بين مكة والطائف في المملكة العربية السعودية، ويبعد عن مكة حوالي 22 كيلومتراً. يقف الحجاج على جبل عرفة في اليوم التاسع من شهر ذي الحجة وهو أهم أركان الحج.</p>
+                  <p>قال النبي صلى الله عليه وسلم: "الحج عرفة"، مما يدل على أهمية الوقوف بعرفة في الحج. يبدأ وقت الوقوف بعرفة من زوال شمس يوم عرفة إلى طلوع فجر يوم النحر.</p>
+                  <h4>أهمية جبل عرفة:</h4>
+                  <ul>
+                    <li>الوقوف بعرفة هو الركن الأعظم للحج</li>
+                    <li>مكان نزول الوحي على النبي صلى الله عليه وسلم</li>
+                    <li>مكان استجابة الدعاء</li>
+                    <li>مكان مغفرة الذنوب والعتق من النار</li>
+                    <li>ذكرى لقاء آدم وحواء بعد نزولهما من الجنة</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              الحرم المكي الشريف
+            </button>
+          </div>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <img src="images/haram.jfif" alt="الحرم المكي" class="accordion-image">
+                <div class="accordion-details">
+                  <h3>الحرم المكي الشريف</h3>
+                  <p>الحرم المكي هو أعظم مسجد في الإسلام، ويقع في قلب مكة المكرمة في المملكة العربية السعودية. يتوسطه الكعبة المشرفة، قبلة المسلمين في صلاتهم. تبلغ مساحة الحرم المكي حالياً 356,800 متر مربع.</p>
+                  <p>يستطيع الحرم المكي استيعاب أكثر من مليوني مصلٍ في وقت واحد. يحتوي الحرم على العديد من المعالم الإسلامية الهامة مثل مقام إبراهيم، وحجر إسماعيل، وبئر زمزم.</p>
+                  <h4>معالم الحرم المكي:</h4>
+                  <ul>
+                    <li>الكعبة المشرفة</li>
+                    <li>مقام إبراهيم</li>
+                    <li>حجر إسماعيل</li>
+                    <li>بئر زمزم</li>
+                    <li>الصفا والمروة</li>
+                    <li>الحجر الأسود</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الخرائط التفاعلية -->
+  <section class="map-section">
+    <div class="map-container">
+      <h2 class="map-title animate__animated animate__fadeIn">خريطة المواقع الإسلامية</h2>
+      
+      <div class="map-wrapper animate__animated animate__fadeIn">
+        <div id="holySitesMap"></div>
+      </div>
+      
+      <div class="map-legend animate__animated animate__fadeInUp">
+        <div class="map-legend-item">
+          <span>مكة المكرمة</span>
+          <div class="map-legend-color" style="background-color: #e74c3c;"></div>
+        </div>
+        <div class="map-legend-item">
+          <span>المدينة المنورة</span>
+          <div class="map-legend-color" style="background-color: #3498db;"></div>
+        </div>
+        <div class="map-legend-item">
+          <span>جبل عرفة</span>
+          <div class="map-legend-color" style="background-color: #2ecc71;"></div>
+        </div>
+        <div class="map-legend-item">
+          <span>منى</span>
+          <div class="map-legend-color" style="background-color: #f39c12;"></div>
+        </div>
+        <div class="map-legend-item">
+          <span>مزدلفة</span>
+          <div class="map-legend-color" style="background-color: #9b59b6;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- زر العودة للأعلى -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- سكربتات -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  
+  <script>
+    // شريط التقدم
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+      
+      // إظهار زر العودة للأعلى
+      if (window.pageYOffset > 300) {
+        document.getElementById('backToTop').classList.add('show');
+      } else {
+        document.getElementById('backToTop').classList.remove('show');
+      }
+    });
+    
+    // زر العودة للأعلى
+    document.getElementById('backToTop').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // تأثير التمرير لشريط التنقل
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // سلايدر الأذكار المخصص
+    const azkarSlides = [
+      {
+        text: "لبيك اللهم لبيك، لبيك لا شريك لك لبيك، إن الحمد والنعمة لك والملك، لا شريك لك",
+        reference: "دعاء الإحرام"
+      },
+      {
+        text: "ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار",
+        reference: "سورة البقرة - الآية 201"
+      },
+      {
+        text: "سبحان الله والحمد لله ولا إله إلا الله والله أكبر ولا حول ولا قوة إلا بالله العلي العظيم",
+        reference: "الأذكار العامة"
+      },
+      {
+        text: "اللهم هذا البيت بيتك، والحرم حرمك، والأمن أمنك، وهذا مقام العائذ بك",
+        reference: "دعاء عند الكعبة"
+      },
+      {
+        text: "رب اغفر وارحم وأنت خير الراحمين، اللهم إني أسألك فعل الخيرات، وترك المنكرات، وحب المساكين",
+        reference: "أدعية النبي صلى الله عليه وسلم"
+      }
+    ];
+
+    const azkarSlide = document.querySelector('.azkar-slide');
+    const zekrText = azkarSlide.querySelector('.zekr-text');
+    const zekrReference = azkarSlide.querySelector('.zekr-reference');
+    const dots = document.querySelectorAll('.azkar-dot');
+    let currentIndex = 0;
+
+    function showZekr(index) {
+      // تأثير التلاشي
+      gsap.to(azkarSlide, {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: function() {
+          zekrText.textContent = azkarSlides[index].text;
+          zekrReference.textContent = azkarSlides[index].reference;
+          gsap.to(azkarSlide, { opacity: 1, duration: 0.5 });
+        }
+      });
+      
+      // تحديث النقاط النشطة
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    // تغيير الذكر كل 5 ثواني
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % azkarSlides.length;
+      showZekr(currentIndex);
+    }, 5000);
+
+    // النقر على النقاط لتغيير الذكر
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        showZekr(currentIndex);
+      });
+    });
+
+    // تهيئة خريطة المواقع الإسلامية
+    document.addEventListener('DOMContentLoaded', function() {
+      const map = L.map('holySitesMap').setView([23.8859, 45.0792], 6);
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
+      // إضافة علامات المواقع الإسلامية
+      const holySites = [
+        {
+          name: "مكة المكرمة",
+          coords: [21.4225, 39.8262],
+          color: "#e74c3c",
+          description: "المسجد الحرام والكعبة المشرفة"
+        },
+        {
+          name: "المدينة المنورة",
+          coords: [24.4672, 39.6117],
+          color: "#3498db",
+          description: "المسجد النبوي الشريف"
+        },
+        {
+          name: "جبل عرفة",
+          coords: [21.3644, 40.0003],
+          color: "#2ecc71",
+          description: "موقع الوقوف في الحج"
+        },
+        {
+          name: "منى",
+          coords: [21.4133, 39.8933],
+          color: "#f39c12",
+          description: "موقع رمي الجمرات"
+        },
+        {
+          name: "مزدلفة",
+          coords: [21.3883, 39.9408],
+          color: "#9b59b6",
+          description: "موقع المبيت في الحج"
+        }
+      ];
+      
+      holySites.forEach(site => {
+        const marker = L.circleMarker(site.coords, {
+          radius: 10,
+          fillColor: site.color,
+          color: "#fff",
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.8
+        }).addTo(map);
+        
+        marker.bindPopup(`
+          <b>${site.name}</b><br>
+          <small>${site.description}</small>
+        `);
+      });
+      
+      // إضافة خطوط بين المواقع
+      const mecca = holySites[0].coords;
+      const medina = holySites[1].coords;
+      const arafat = holySites[2].coords;
+      const mina = holySites[3].coords;
+      const muzdalifah = holySites[4].coords;
+      
+      L.polyline([mecca, medina], {color: 'rgba(52, 152, 219, 0.5)', weight: 3}).addTo(map);
+      L.polyline([mecca, arafat], {color: 'rgba(46, 204, 113, 0.5)', weight: 3}).addTo(map);
+      L.polyline([mecca, mina], {color: 'rgba(243, 156, 18, 0.5)', weight: 3}).addTo(map);
+      L.polyline([mecca, muzdalifah], {color: 'rgba(155, 89, 182, 0.5)', weight: 3}).addTo(map);
+      
+      // تأثيرات GSAP للعناصر
+      gsap.from(".animate__fadeIn", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power2.out"
+      });
+      
+      gsap.from(".animate__fadeInUp", {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+        delay: 0.5
+      });
+      
+      // تأثير اهتزاز للأيقونات
+      const icons = document.querySelectorAll('.nav-link i');
+      
+      icons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+          gsap.to(icon, {
+            scale: 1.4,
+            rotate: 15,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.5)"
+          });
+        });
+        
+        icon.addEventListener('mouseleave', () => {
+          gsap.to(icon, {
+            scale: 1,
+            rotate: 0,
+            duration: 0.5,
+            ease: "back.out(1.7)"
+          });
+        });
+      });
+      
+      // تأثيرات الشعار
+      const kaabaIcon = document.querySelector('.kaaba-icon');
+      const moonIcon = document.querySelector('.moon-icon');
+      
+      setInterval(() => {
+        gsap.to(kaabaIcon, {
+          scale: 1.1,
+          duration: 1,
+          yoyo: true,
+          repeat: 1,
+          ease: "power1.inOut"
+        });
+      }, 8000);
+      
+      setInterval(() => {
+        gsap.to(moonIcon, {
+          scale: 1.2,
+          duration: 1.5,
+          yoyo: true,
+          repeat: 1,
+          ease: "elastic.out(1, 0.5)"
+        });
+      }, 12000);
+    });
+
+    // تنعيم التمرير عند النقر على روابط الهاش
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
